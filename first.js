@@ -127,10 +127,16 @@ console.log(test1)*/
 
 //Lec 8 Package.json
 
-var colors = require('colors');
+/*var colors = require('colors');
 
 console.log("Hello:This is our backend class".white)
 console.log("Hello:We are learning nodejs".blue)
 console.log("Hello:WE install here color npm".green)
-console.log("Hello:This is our backend class".black)
+console.log("Hello:This is our backend class".black)*/
+
+//Lec 9
+
+import chalk from 'chalk';
+
+console.log(chalk.blue('Hello world!'));
 
