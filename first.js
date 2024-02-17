@@ -136,7 +136,12 @@ console.log("Hello:This is our backend class".black)*/
 
 //Lec 9
 
-import chalk from 'chalk';
+/*import chalk from 'chalk';
 
-console.log(chalk.blue('Hello world!'));
+console.log(chalk.blue('Hello world!'));*/
+
+
+//Lec 10 Nodeman package
+
+//console.log("Nodemon is a tool used in Node.js development to automatically restart the server whenever changes are made in the cod")
 
