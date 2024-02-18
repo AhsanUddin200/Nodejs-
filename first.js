@@ -229,3 +229,41 @@ fs.rename(filepath,`${dirpath}/new.txt`,(err)=>{
  },2000)
 console.log("Complete program")*/
 
+//Lec 16 Handle Asynchrous data
+
+/*let a=20;
+let b=40;
+
+
+let wait = new Promise((resolve,reject) =>{
+    setTimeout(()=>{
+        resolve(70);
+    },2000)
+
+})
+
+wait.then((data)=>{
+    b=data;
+    console.log(a+b)
+})*/
+
+//lec 17 How node js work
+
+//call back
+//nodeapi
+//call backqueue
+
+/*console.log('Stating here')
+
+setTimeout(()=>{
+    console.log("long here")
+},2000)
+
+setTimeout(()=>{
+    console.log("Short here")
+},0)
+
+console.log('finish here')*/
+
+//lec 18 Express Js
+
