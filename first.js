@@ -174,5 +174,28 @@ if (Input[2] == 'add') {
 */
 
 
+//Lec 13 Show file list 
+
+/*const fs = require('fs');
+//fs.writeFileSync('orange.txt', 'This is orange');
+const path = require('path')
+const dirPath = path.join(__dirname,'files') //from this line created files from path
+//console.log(dirPath)
+
+/*for (i=0;i<6;i++)
+{
+    fs.writeFileSync(dirPath+"/ahsan.txt",'Here all about ahsan data')
+fs.writeFileSync(dirPath+"/abiha.txt",'Here all about abiha data');
+fs.writeFileSync(dirPath+"/bilal.txt",'Here all about bilal a data');
+fs.writeFileSync(dirPath+"/ali.txt",'Here all about alisgba data');
+}*/
+
+/*fs.readdir(dirPath,(error,files)=>{
+  files.forEach((item)=>{
+    console.log(item)
+  })
+})*/
+
+
 
 
