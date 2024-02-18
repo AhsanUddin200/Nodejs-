@@ -331,12 +331,14 @@ web.get('/contact',(req,resp)=>{
         { 
             name: 'Ahsan',
             email: 'ahsanuddin160@gmail.com',
-            designation: 'CEO'
+            designation: 'CEO',
+            office: 'onboard'
         },
         { 
             name: 'Abiha',
             email: 'abihaahsan2003@gmail.com',
-            designation: 'CFO'
+            designation: 'CFO',
+            office: 'onboard'
         }
     ] );
 });
