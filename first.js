@@ -196,6 +196,36 @@ fs.writeFileSync(dirPath+"/ali.txt",'Here all about alisgba data');
   })
 })*/
 
+//Lec 14  CRUD 
+
+/*const fs = require('fs');
+const path= require('path')
+const dirpath = path.join(__dirname,'crud')
+const filepath = `${dirpath}/createfile.txt`;
+//fs.writeFileSync(filepath,'Here we are creating and read a file')
+
+//fs.readFile(filepath,'utf8',(err,item)=>{
+   // console.log(item)
+//})
+
+//fs.appendFile(filepath,'Here we are updating the file',(err,item)=>{
+   // if (!err)console.log('file is update')
+//})
+
+fs.rename(filepath,`${dirpath}/new.txt`,(err)=>{
+    if(!err)
+    console.log("File name is update")
+})
+*/
 
 
+//Lec 15 Asynchrous and synchrous
+
+/* console.log("Start to run program")
+
+ // 2sec 
+ setTimeout(()=>{
+        console.log("Start to run logic")
+ },2000)
+console.log("Complete program")*/
 
