@@ -105,7 +105,7 @@ console.log("This is our file name:",__filename)*/
 //LEC 7
 //Make basic Server
 
-const http = require('http');
+/*const http = require('http');
 
 
 
@@ -113,7 +113,7 @@ http.createServer((req,resp)=>{
     resp.write("<h1>This is backend class and making own server</h1>");
     resp.end();
 }).listen(2000);
-//createServer (function as a parameter)
+//createServer (function as a parameter)*/
 
 //Arrow Function
 /*function test(a)
@@ -144,4 +144,35 @@ console.log(chalk.blue('Hello world!'));*/
 //Lec 10 Nodeman package
 
 //console.log("Nodemon is a tool used in Node.js development to automatically restart the server whenever changes are made in the cod")
+
+//Lec 11 Make simple API
+
+/*const http = require('http');
+
+http.createServer((req, resp) => {
+    const api = require('./api');
+    resp.writeHead(200, {'Content-Type': 'application/json'});
+    resp.write(JSON.stringify(api));
+    resp.end();
+}).listen(500);*/
+
+//Lec 12 (Input from command)
+
+//console.log(process.argv[3])
+/*const fs = require('fs');
+
+const Input = process.argv;
+
+if (Input[2] == 'add') {
+   
+    fs.writeFileSync(Input[3], Input.slice(4).join(' '));
+} else if (Input[2] == 'remove') {
+    fs.unlinkSync(Input[3]);
+} else {
+    console.log("it's wrong");
+}
+*/
+
+
+
 
