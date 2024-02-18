@@ -267,3 +267,42 @@ console.log('finish here')*/
 
 //lec 18 Express Js
 
+/*const express = require('express')
+
+const web = express();
+
+web.get('',(req,resp)=>{
+     resp.send('Hello, This is first page')
+})
+
+web.get('/interface',(req,resp)=>{
+    resp.send('Hello, This is our page interface')
+});
+
+web.get('/contact',(req,resp)=>{
+    resp.send('Hello, <h4>This is our contact page</h4>')
+});
+
+web.listen(300);*/
+
+
+//Lec 19
+
+const express = require('express')
+
+const web = express();
+
+web.get('',(req,resp)=>{
+    console.log('Here clint are requesting for data from  =====>>',req.query)
+     resp.send('Hello, This is first page  ' +req.query.name)
+})
+
+web.get('/interface',(req,resp)=>{
+    resp.send('Hello, This is our page interface')
+});
+
+web.get('/contact',(req,resp)=>{
+    resp.send('Hello, <h4>This is our contact page</h4>')
+});
+
+web.listen(300);
