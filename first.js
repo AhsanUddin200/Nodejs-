@@ -288,7 +288,7 @@ web.listen(300);*/
 
 //Lec 19
 
-const express = require('express')
+/*const express = require('express')
 
 const web = express();
 
@@ -303,6 +303,42 @@ web.get('/interface',(req,resp)=>{
 
 web.get('/contact',(req,resp)=>{
     resp.send('Hello, <h4>This is our contact page</h4>')
+});
+
+web.listen(300);*/
+
+//lec 20 (Render HTML and JSON)
+
+const express = require('express')
+
+const web = express();
+
+web.get('',(req,resp)=>{
+     resp.send('<h3>Welcome, This is first page</h3> <a href="/interface">Go to interface')
+})
+
+web.get('/interface',(req,resp)=>{
+
+    resp.send(`
+    <input type="text" placeholder="User Name" value="${req.query.name}"/>
+    <button>Click here</button>
+    <a href='/contact'>Go to Contact
+`);
+});
+
+web.get('/contact',(req,resp)=>{
+    resp.send([
+        { 
+            name: 'Ahsan',
+            email: 'ahsanuddin160@gmail.com',
+            designation: 'CEO'
+        },
+        { 
+            name: 'Abiha',
+            email: 'abihaahsan2003@gmail.com',
+            designation: 'CFO'
+        }
+    ] );
 });
 
 web.listen(300);
