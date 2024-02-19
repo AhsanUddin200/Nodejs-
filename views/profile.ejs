@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
 </head>
 <body>
-    <h3> Welcome <%= user.name%></h3>
-    <h4>This is user Email:<%= user.email%></h4>
-    <h4>This is user Id:<%= user.id%></h4>
-    <h4>This is user Country:<%= user.country%></h4>
+    <%- include('common/header') %>
+    <h3>Welcome <%= user.name %></h3>
+    <h4>This is user Email: <%= user.email %></h4>
+    <h4>This is user Id: <%= user.id %></h4>
+    <ul>
+        <% user.skill.forEach((item) => { %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+</body>
 </html>

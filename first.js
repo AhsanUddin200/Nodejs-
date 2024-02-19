@@ -389,7 +389,7 @@ web.listen(300)
 //Lec 23 Template Engine
 
 
-const express = require('express')
+/*const express = require('express')
 const path = require('path')
 const web = express()
 const publicPath = path.join(__dirname,'public')
@@ -421,4 +421,76 @@ web.get('/about',(req,resp)=>{
  })
 
 
-web.listen(300)
+web.listen(300)/*/
+
+
+
+
+//Lec 24 Dynamic page
+
+/*const express = require('express')
+const path = require('path')
+const web = express()
+const publicPath = path.join(__dirname,'public')
+
+web.set('view engine','ejs');
+
+web.get('/profile',(req,resp)=>{
+    const user = {
+        name:'ahsan',
+        email:'ahsanuddin160@gmail.com',
+        id:101,
+        country:'pakistan',
+        skill:['HTML','CSS','Javascript','React','Node.js']
+    }
+   resp.render('profile',{user})
+})
+
+ web.get('/login',(req,resp)=>{
+resp.render('login')
+ })
+
+web.get('/contact',(req,resp)=>{
+    resp.sendFile(`${publicPath}/contact.html`)
+ })
+
+
+ web.get('/home',(req,resp)=>{
+    resp.sendFile(`${publicPath}/home.html`)
+ })
+
+ //If user write wroung addresss than show 404
+
+ web.get('*',(req,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`)
+ })
+
+
+web.listen(300)*/
+
+//Lec 25 Middlewares
+
+const express = require('express');
+const web = express();
+
+const reqFilter = (req, res, next) => {
+    if (!req.query.age) {
+        res.send("What is your age?");
+    } else if (req.query.age < 18) {
+        res.send("You are not able to access this page because you are less than 18.");
+    } else {
+        next(); 
+    }
+};
+
+web.use(reqFilter);
+
+web.get('/', (req, res) => {
+    res.send("This is home page");
+});
+
+web.get('/user', (req, res) => {
+    res.send("<h3>This is user page</h3>");
+});
+
+web.listen(400)
