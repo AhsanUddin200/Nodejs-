@@ -470,7 +470,7 @@ web.listen(300)*/
 
 //Lec 25 Middlewares
 
-const express = require('express');
+/*const express = require('express');
 const web = express();
 
 const reqFilter = (req, res, next) => {
@@ -492,5 +492,36 @@ web.get('/', (req, res) => {
 web.get('/user', (req, res) => {
     res.send("<h3>This is user page</h3>");
 });
+
+web.listen(400)*/
+
+//Lec 26 Route level Middleware
+
+
+const express = require('express');
+const web = express();
+const reqFilter = require('./middleware')
+const route = express.Router();
+
+
+//web.use(reqFilter);
+route.use(reqFilter)
+web.use('/',route)
+web.get('/', (req, res) => {
+    res.send("This is home page");
+});
+
+web.get('/user',(req, res) => {
+    res.send("<h3>This is user page</h3>");
+});
+
+route.get('/about', (req, res) => {
+    res.send("<h3>This is about page</h3>");
+});
+
+route.get('/contact', (req, res) => {
+    res.send("<h5>This is contact  page</h5>");
+});
+
 
 web.listen(400)
