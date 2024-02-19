@@ -389,3 +389,36 @@ web.listen(300)
 //Lec 23 Template Engine
 
 
+const express = require('express')
+const path = require('path')
+const web = express()
+const publicPath = path.join(__dirname,'public')
+
+web.set('view engine','ejs');
+
+web.get('/profile',(req,resp)=>{
+    const user = {
+        name:'ahsan',
+        email:'ahsanuddin160@gmail.com',
+        id:101,
+        country:'pakistan'
+    }
+   resp.render('profile',{user})
+})
+
+web.get('/about',(req,resp)=>{
+    resp.sendFile(`${publicPath}/about.html`)
+ })
+
+ web.get('/home',(req,resp)=>{
+    resp.sendFile(`${publicPath}/home.html`)
+ })
+
+ //If user write wroung addresss than show 404
+
+ web.get('*',(req,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`)
+ })
+
+
+web.listen(300)
