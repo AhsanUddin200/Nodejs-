@@ -348,11 +348,44 @@ web.listen(300);*/
 
 //Lec 21 Make HTML File
 
-const express = require('express')
+/*const express = require('express')
 const web = express()
 const path = require('path')
 const publicPath = path.join(__dirname,'public')
 
 web.use(express.static(publicPath));
 
-web.listen(200)
+web.listen(200)*/
+
+//Lec 22 Remove extension from URL
+
+/*const express = require('express')
+const path = require('path')
+const web = express()
+const publicPath = path.join(__dirname,'public')
+
+web.get('/contact',(req,resp)=>{
+   resp.sendFile(`${publicPath}/contact.html`)
+})
+
+web.get('/about',(req,resp)=>{
+    resp.sendFile(`${publicPath}/about.html`)
+ })
+
+ web.get('/home',(req,resp)=>{
+    resp.sendFile(`${publicPath}/home.html`)
+ })
+
+ //If user write wroung addresss than show 404
+
+ web.get('*',(req,resp)=>{
+    resp.sendFile(`${publicPath}/404.html`)
+ })
+
+
+web.listen(300)
+*/
+
+//Lec 23 Template Engine
+
+
