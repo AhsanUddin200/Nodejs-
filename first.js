@@ -309,7 +309,7 @@ web.listen(300);*/
 
 //lec 20 (Render HTML and JSON)
 
-const express = require('express')
+/*const express = require('express')
 
 const web = express();
 
@@ -343,4 +343,16 @@ web.get('/contact',(req,resp)=>{
     ] );
 });
 
-web.listen(300);
+web.listen(300);*/
+
+
+//Lec 21 Make HTML File
+
+const express = require('express')
+const web = express()
+const path = require('path')
+const publicPath = path.join(__dirname,'public')
+
+web.use(express.static(publicPath));
+
+web.listen(200)
