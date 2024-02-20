@@ -498,7 +498,7 @@ web.listen(400)*/
 //Lec 26 Route level Middleware
 
 
-const express = require('express');
+/*const express = require('express');
 const web = express();
 const reqFilter = require('./middleware')
 const route = express.Router();
@@ -524,4 +524,25 @@ route.get('/contact', (req, res) => {
 });
 
 
-web.listen(400)
+web.listen(400)*/
+
+//lec 27  28 29 is installtion and crud operation of mango db
+
+//lec 30 Connect MangoDb with Node.js 
+
+const {MongoClient} = require('mongodb')
+const url ='mongodb://localhost:27017' //mongodb path
+const client = new MongoClient(url)     //feth from MongoClient 
+const database = 'e-comm'               //Your database name  'e-comm'
+
+async function getdata()
+{
+    let result = await client.connect()
+    let db = result.db(database)    
+    let collection = db.collection('products')  //collection name
+    let responce = await collection.find({}).toArray()
+    console.log(responce);
+}
+
+getdata();
+
