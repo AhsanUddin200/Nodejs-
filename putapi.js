@@ -1,8 +1,6 @@
-//lec 37 Node.js put API method (PUT)
+//lec 37 Node.js put API method (PUT
 
-//lec 36 Post API method in Node.js
-
-const express = require('express')
+const express = require('express'))
 const dbConnection = require('./mongodb')
 const web = express()
 

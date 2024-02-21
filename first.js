@@ -568,3 +568,26 @@ dbConnection().then((resp)=>{     //.then use for handle promise
 //lec 36 Post API method in Node.js (POST)
 
 //lec 37 Node.js put API method (PUT)
+
+//lec 38 Node.js Delete API method (DELETE)
+
+//lec 39 Start with mongoose
+
+const mongoose = require('mongoose');
+
+const main = async () => {
+   await mongoose.connect("mongodb://localhost:27017/e-comm");
+
+   const productSchema = new mongoose.Schema({
+      name: String
+   });
+
+  
+   const productsModel = mongoose.model('Product', productSchema);
+
+   const data = new productsModel({ name: "Abiha Ahsan" });
+   const result = await data.save();
+   console.log(result);
+}
+
+main();
