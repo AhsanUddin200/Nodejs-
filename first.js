@@ -557,18 +557,8 @@ dbConnection().then((resp)=>{     //.then use for handle promise
 
 //lec 32 Insert data from mongoDB
 
-/*const dbConnection = require('./mongodb')
-dbConnection().then((resp)=>{     //.then use for handle promise
-    (resp.find().toArray()).then((data)=>{
-         console.warn(data)
-    })
-})*/
+
 
 //lec 33 Update data from mongoDB
 
-const dbConnection = require('./mongodb')
-dbConnection().then((resp)=>{     //.then use for handle promise
-    (resp.find().toArray()).then((data)=>{
-         console.warn(data)
-    })
-})
+//lec 34 delete data from mongoDB

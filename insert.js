@@ -10,6 +10,7 @@ const insert = async () => {
     );
 
     if (result.acknowledged) {
+        console.log(result)
         console.log("Data saved");
     }
 };
