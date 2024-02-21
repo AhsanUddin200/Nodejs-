@@ -1,4 +1,4 @@
-//lec 35 Make API with mongoDB
+//lec 35 Make API with mongoDB(get)
 
 const express = require('express')
 const dbConnection = require('./mongodb')

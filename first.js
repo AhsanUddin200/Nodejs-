@@ -563,4 +563,6 @@ dbConnection().then((resp)=>{     //.then use for handle promise
 
 //lec 34 delete data from mongoDB
 
-//lec 35 Make API with mongoDB
+//lec 35 Make API with mongoDB(GET)
+
+//lec 36 Post API method in Node.js
