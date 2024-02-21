@@ -573,7 +573,7 @@ dbConnection().then((resp)=>{     //.then use for handle promise
 
 //lec 39 Start with mongoose
 
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const main = async () => {
    await mongoose.connect("mongodb://localhost:27017/e-comm");
@@ -590,4 +590,25 @@ const main = async () => {
    console.log(result);
 }
 
-main();
+main();*/
+
+//Lec 40 CRUD operation in mongoose
+
+//Lec 41 POST API with mongoose
+
+const express = require('express')
+require('./PostAPImon')
+const product = require('./product41')
+const web = express()
+web.use(express.json())
+
+web.post('/create',async(req,resp)=>{
+    const data = new product(req.body)
+    const result= await data.save()
+    console.log(req.body)
+    resp.send(req.body)
+    
+})
+
+web.listen(500)
+
