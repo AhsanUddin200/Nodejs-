@@ -676,7 +676,7 @@ web.listen(600);*/
 
 //Lec 44  Upload file in node.js
 
-const express = require('express');
+/*const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -700,4 +700,14 @@ web.post('/upload', upload, (req, resp) => {
     resp.send("File uploaded successfully");
 });
 
-web.listen(500)
+web.listen(500)*/
+
+//Lec 45  OS Module in node.js
+
+const os = require("os")
+console.log(os.arch())
+console.log(os.freemem()/(1024*1024*1024))
+console.log(os.totalmem()/(1024*1024*1024))
+console.log(os.hostname())
+console.log(os.platform())
+console.log(os.userInfo())
