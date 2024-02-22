@@ -614,7 +614,7 @@ web.listen(500)*/
 
 //Lec 42 GET PUT AND DELETE API From mongoose
 
-const express = require('express');
+/*const express = require('express');
 require('./PostAPImon');
 const product = require('./product41');
 const web = express();
@@ -647,4 +647,30 @@ web.put('/update/:_id', async (req, resp) => {
     console.log(req.params)
 });
 
-web.listen(500);
+web.listen(500);*/
+
+
+//Lec 43 Serach API in Node.js mongoDB
+
+const express = require('express');
+require('./PostAPImon');
+const product = require('./product41');
+const web = express();
+web.use(express.json());
+
+web.get("/search/:key", async (req, resp) => {
+    
+    const data = await product.find({
+        "$or": [
+            { "name": { $regex: req.params.key } },
+            { "Father Name": { $regex: req.params.key } },
+            { "id": { $regex: req.params.key } },
+            { "Status": { $regex: req.params.key } },
+        ]
+    });
+    console.log(req.params.key);
+    resp.send(data);
+});
+web.listen(600);
+
+
