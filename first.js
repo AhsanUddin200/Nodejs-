@@ -596,7 +596,7 @@ main();*/
 
 //Lec 41 POST API with mongoose
 
-const express = require('express')
+/*const express = require('express')
 require('./PostAPImon')
 const product = require('./product41')
 const web = express()
@@ -610,5 +610,41 @@ web.post('/create',async(req,resp)=>{
     
 })
 
-web.listen(500)
+web.listen(500)*/
 
+//Lec 42 GET PUT AND DELETE API From mongoose
+
+const express = require('express');
+require('./PostAPImon');
+const product = require('./product41');
+const web = express();
+web.use(express.json());
+
+web.post('/create', async (req, resp) => {
+    const data = new product(req.body);
+    const result = await data.save();
+    console.log(req.body);
+    resp.send(req.body);
+});
+
+web.get('/get', async (req, resp) => {
+    const data = await product.find();
+    resp.send(data);
+});
+
+web.delete('/delete/:_id', async (req, resp) => {
+    const data = await product.deleteOne(req.params);
+    console.log(req.params);
+    resp.send(data);
+});
+
+web.put('/update/:_id', async (req, resp) => {
+    const data = await product.updateOne(
+        req.params,                // condition
+        { $set: req.body }          // updated data
+    );
+    resp.send(req.params);
+    console.log(req.params)
+});
+
+web.listen(500);
