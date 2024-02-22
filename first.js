@@ -704,10 +704,50 @@ web.listen(500)*/
 
 //Lec 45  OS Module in node.js
 
-const os = require("os")
+/*const os = require("os")
 console.log(os.arch())
 console.log(os.freemem()/(1024*1024*1024))
 console.log(os.totalmem()/(1024*1024*1024))
 console.log(os.hostname())
 console.log(os.platform())
-console.log(os.userInfo())
+console.log(os.userInfo())*/
+
+//Lec 46  Event Ans Event Emitter
+
+
+/*const express = require('express');
+const EventEmitter = require('events');
+
+const web = express();
+const event = new EventEmitter(); 
+let count = 0; 
+
+event.on("CountAPI", () => {
+    count++;
+    console.log("My event number is:",count);
+    
+});
+
+web.get('/', (req, resp) => {
+    resp.send("Called api for event");
+    event.emit("CountAPI");
+})
+
+web.get('/search', (req, resp) => {
+    resp.send("Called api for event");
+    event.emit("CountAPI"); 
+});
+
+web.get('/upload', (req, resp) => {
+    resp.send("Called api for event");
+    event.emit("CountAPI"); 
+});
+
+web.listen(300) */
+
+////Lec 47  REPL(READ,EVAL,PRINT,LOOP) 
+//This is noting just use to write node.js in command line..
+//const x= 10
+//console.log(x++)
+
+//Lec 48  Node.js Connect with mysql
