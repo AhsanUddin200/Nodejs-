@@ -652,7 +652,7 @@ web.listen(500);*/
 
 //Lec 43 Serach API in Node.js mongoDB
 
-const express = require('express');
+/*const express = require('express');
 require('./PostAPImon');
 const product = require('./product41');
 const web = express();
@@ -671,6 +671,33 @@ web.get("/search/:key", async (req, resp) => {
     console.log(req.params.key);
     resp.send(data);
 });
-web.listen(600);
+web.listen(600);*/
 
 
+//Lec 44  Upload file in node.js
+
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const web = express();
+
+const uploadDir = path.join(__dirname, 'uploads');
+
+
+const upload = multer({
+    storage: multer.diskStorage({
+        destination: function (req, file, callback) {
+            callback(null, uploadDir);
+        },
+        filename: function (req, file, callback) {
+            callback(null, file.fieldname + "-" + Date.now() + ".pdf");
+        }
+    })
+}).single("user_file");
+
+web.post('/upload', upload, (req, resp) => {
+    resp.send("File uploaded successfully");
+});
+
+web.listen(500)
