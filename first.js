@@ -751,3 +751,35 @@ web.listen(300) */
 //console.log(x++)
 
 //Lec 48  Node.js Connect with mysql
+
+/*const mysql = require("mysql");
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '', // If your MySQL server has no password, keep it empty
+    database: 'test'
+});
+
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database:', err);
+       
+    }
+    console.log('Connected to database');
+    
+    
+    connection.query("SELECT * FROM user", (err, result) => {
+       
+        console.log('Query result:', result);
+        
+        
+    });
+});*/
+
+//Lec 49 to 52 detected due to MYSQL
+
+//Lec 53 PHP VS Node.js comparison
+
+//54 Javascript VS php
+
